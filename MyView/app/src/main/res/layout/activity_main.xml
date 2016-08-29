@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.basic.myview.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!dsafsadfadfadfadfsadfdsadasdsadsad"
+        android:textSize="10pt"
+        android:background="@android:color/holo_blue_bright"
+        android:drawableRight="@drawable/contact"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Textdfasfasfdadfsawasfdfs"
+        android:id="@+id/textView"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/holo_blue_bright"
+        android:drawableEnd="@drawable/contact"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:ellipsize="middle"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18115124359"
+        android:id="@+id/textView4"
+        android:autoLink="phone|email"
+ />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="New Text"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView4"
+        android:background="@drawable/bg_border"
+        android:layout_marginTop="50dp" />
+    <CheckedTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="可以勾选的文本框"
+        android:background="@android:color/holo_blue_bright"
+        android:checkMark="@drawable/contact"/>
+</LinearLayout>
