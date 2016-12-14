@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="demo.com.transitions.MainActivity">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="页面切换动画1"
+        android:onClick="jump1"/>
+    <Button
+        android:text="页面切换动画2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:onClick="jump2"
+        />
+    <TextView
+        android:text="页面切换动画2"
+        android:transitionName="shareName"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        />
+
+</LinearLayout>
