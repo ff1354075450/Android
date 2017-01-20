@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 transaction.replace(R.id.right_layout,fragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
-                break;
             case R.id.left_frg_button2:
                 ListFragment listFragment= new ListFragmentD();
                 getFragmentManager().beginTransaction().replace(R.id.right_layout,listFragment).commit();
                 break;
+
                 default:
                     break;
 
