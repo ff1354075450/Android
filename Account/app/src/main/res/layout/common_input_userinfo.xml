@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="20dp">
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/textname"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="用户名:"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/textname"
+            android:hint="请输入用户名"
+            android:paddingLeft="12dp"
+            android:textColorHint="#606363"
+            android:background="@drawable/edittext"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/pwname"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="用户名:"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/pwname"
+            android:hint="请输入密码"
+            android:paddingLeft="12dp"
+            android:textColorHint="#606363"
+            android:background="@drawable/edittext"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

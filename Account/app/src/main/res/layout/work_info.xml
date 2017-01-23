@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <TextView
+        android:id="@+id/workname"
+        android:layout_width="0dp"
+        android:layout_weight="0.618"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:gravity="center|left"
+        android:text="名字"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/workdays"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center|left"
+        android:text="1"
+        />
+    <TextView
+        android:id="@+id/kind"
+        android:layout_width="0dp"
+        android:layout_weight="0.182"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center|left"
+        android:text="小"
+        />
+
+</LinearLayout>
