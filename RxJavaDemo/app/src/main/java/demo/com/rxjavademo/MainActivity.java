@@ -1,11 +1,13 @@
 package demo.com.rxjavademo;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,6 +17,7 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
@@ -22,10 +25,13 @@ import rx.schedulers.Schedulers;
 /**
  *本demo主要参照：https://gank.io/post/560e15be2dca930e00da1083
  * 文字来进行的如有疑惑可自行解决
+ *
+
+ *
  */
 public class MainActivity extends AppCompatActivity {
 
-
+    private Context context;
     private TextView tv;
     private ImageView imageView;
     @Override
@@ -33,11 +39,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        context=this;
         tv = (TextView) findViewById(R.id.tv);
         imageView = (ImageView) findViewById(R.id.imageview);
 
 
-        liftdemo();
+        doDemo();
 
 
 
@@ -381,6 +388,108 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * compose：对observable整体的变换
+     * @return
+     */
+    public void composeDemo(){
+        MapAll mapall = new MapAll();
+        Observer observe = new Observer() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(Object o) {
+                Log.e("composeDemo",o.toString());
+            }
+        };
+        Observable.just(1).compose(mapall).subscribe(observe);
+        Observable.just(2).compose(mapall).subscribe(observe);
+        Observable.just(3).compose(mapall).subscribe(observe);
+        Observable.just(4).compose(mapall).subscribe(observe);
+    }
+
+
+
+    public class MapAll implements Observable.Transformer<Integer,String>{
+
+        @Override
+        public Observable<String> call(Observable<Integer> integerObservable) {
+            return integerObservable
+                    .flatMap(new Func1<Integer, Observable<String>>() {
+                        @Override
+                        public Observable<String> call(Integer integer) {
+                            return Observable.just(integer+"");
+                        }
+                    })
+                    .map(new Func1<String, String>() {
+                        @Override
+                        public String call(String s) {
+                            return "hello"+s;
+                        }
+                    });
+        }
+    }
+
+    /**
+     * 线程变换
+     * observeOn()指定的是他之后的操作所在的线程，因此如果有多次切换线程的需求，
+     * 只要在每个想要切换线程的位置调用一次observeOn()即可
+     * @return
+     */
+
+    public void SchedulerDemo1(){
+        Observable.just(1,2,3,4)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.newThread())//切换到新的线程，
+                .map(new Func1<Integer, String>() {
+                    @Override
+                    public String call(Integer integer) {
+                        Log.e("map1","第一次转换 "+integer);
+                        return integer+"";
+                    }
+                })
+                .observeOn(Schedulers.io())//切换到io线程
+                .map(new Func1<String, String>() {
+                    @Override
+                    public String call(String s) {
+                        Log.e("map2","io线程变换 "+s);
+                        return "io"+s;
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String s) {
+                        Log.e("schedulerDemo",s);
+                    }
+                });
+    }
+
+    /**
+     * doOnSubscribe()使的代码在主线程中执行
+     * @return
+     */
+    public void doDemo(){
+        Observable.just(1)
+                .subscribeOn(Schedulers.io())
+                .doOnSubscribe(new Action0() {
+                    @Override
+                    public void call() { //需要在主线程中执行的工作
+                        Toast.makeText(context,"mainThread",Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .subscribeOn(AndroidSchedulers.mainThread()) //指定主线程
+                .observeOn(AndroidSchedulers.mainThread()) //切换到主线程
+                .subscribe();
+    }
 
 
 
@@ -402,5 +511,6 @@ public class MainActivity extends AppCompatActivity {
 
         return list;
     }
+
 
 }
