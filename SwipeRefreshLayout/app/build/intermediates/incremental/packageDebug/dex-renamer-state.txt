@@ -1,0 +1,7 @@
+#Tue Jan 24 14:49:07 CST 2017
+base.0=E\:\\MyProject\\Android\\SwipeRefreshLayout\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ffeb82521b7a171a4c3142126fdc35bc6702363f
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=E\:\\MyProject\\Android\\SwipeRefreshLayout\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_5e4fbba146ed83cc4059a95cb8656225731e4acf\\classes.dex
+base.1=E\:\\MyProject\\Android\\SwipeRefreshLayout\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_5e4fbba146ed83cc4059a95cb8656225731e4acf
+file.0=E\:\\MyProject\\Android\\SwipeRefreshLayout\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ffeb82521b7a171a4c3142126fdc35bc6702363f\\classes.dex

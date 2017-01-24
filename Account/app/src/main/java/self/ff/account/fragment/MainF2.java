@@ -1,13 +1,12 @@
 package self.ff.account.fragment;
 
-import android.app.Fragment;
-import android.app.ListFragment;
+
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 
 import self.ff.account.R;
 
@@ -34,7 +33,7 @@ public class MainF2 extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.work_today_log,wrokers));
+        setListAdapter(new ArrayAdapter<String>(getActivity(), R.layout.work_today_log,R.id.workname,wrokers));
     }
 
     @Override

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2fcfbd53ec55db19e1448db5f58e9fbfeee8960a">
+        <dex dex="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5e4fbba146ed83cc4059a95cb8656225731e4acf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="85ab7906d087191bbdba7d86b5945428cfdc41f6">
+        <dex dex="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_ffeb82521b7a171a4c3142126fdc35bc6702363f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-21.0.3_255e1e309bc89a726e53aea51f5ee49b0a98d749\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-21.0.3_df97d93094e97d0a67eeb12b8d28f4046ef3d629\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-21.0.3_71193cbbb9c3a21f88fd16efdbc61575d72a48c9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="E:\MyProject\Android\SwipeRefreshLayout\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-21.0.3_aa16b3cf885393ef74ba8407c65bcf20627dd05b\classes.dex" />
+    </item>
+
+</items>
