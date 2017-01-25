@@ -68,4 +68,5 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder>{
             kind = (TextView) itemView.findViewById(R.id.kind);
         }
     }
+
 }

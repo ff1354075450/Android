@@ -38,4 +38,5 @@ dependencies {
     compile 'io.reactivex:rxjava:1.2.5'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.android.support:recyclerview-v7:25.0.1'
+    compile files('libs/fastjson-1.2.2.jar')
 }

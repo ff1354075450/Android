@@ -6,5 +6,5 @@ package self.ff.account;
 
 public class Code {
 
-    public final static String SERVER="http://192.168.1.244:8080";
+    public final static String SERVER="http://192.168.1.245:8080";
 }

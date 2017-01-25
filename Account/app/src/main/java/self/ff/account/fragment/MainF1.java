@@ -58,15 +58,22 @@ public class MainF1 extends Fragment {
         mswipe = (SwipeRefreshLayout) rootView.findViewById(R.id.main1_swipe);
 
         Observable.just(Code.SERVER+"/account/worker_queryall.do")
-                .subscribeOn(Schedulers.io())
                 .map(new Func1<String, String>() {
                     @Override
                     public String call(String s) {
                         String str = FHttp.mypost(s,"");
+                        return str;
+                    }
+                })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String str) {
                         JSONObject json = null;
                         try {
                             Log.d("mainf1",str);
-                            json = new JSONObject(s);
+                            json = new JSONObject(str);
                             JSONArray jsonArray = (JSONArray) json.get("worker");
                             myAdapter=new RecAdapter(jsonArray);
                             mrecycleView.setAdapter(myAdapter);
@@ -74,14 +81,6 @@ public class MainF1 extends Fragment {
                             e.printStackTrace();
                         }
 
-
-                        return str;
-                    }
-                })
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<String>() {
-                    @Override
-                    public void call(String s) {
                     }
                 });
 
