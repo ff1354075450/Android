@@ -7,16 +7,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by ff on 2017/1/23.
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
 
-    private String[] mdate;
+    private List<String> mdate;
 
     public MyAdapter(String[] mdate) {
-        this.mdate = mdate;
+        this.mdate= new ArrayList<>();
+        for (int i = 0; i < mdate.length; i++) {
+            this.mdate.add(mdate[i]);
+        }
+    }
+
+    private OnItemClickListener mOnItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.mOnItemClickListener = listener;
     }
 
     /**
@@ -41,14 +53,33 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
      * @param position
      */
     @Override
-    public void onBindViewHolder(MyAdapter.ViewHolder holder, int position) {
-        Log.e("data",mdate[position]);
-        holder.mTextView.setText(mdate[position]);
+    public void onBindViewHolder(final MyAdapter.ViewHolder holder, final int position) {
+        Log.e("data",mdate.get(position)+"");
+        holder.mTextView.setText(mdate.get(position));
+        if(mOnItemClickListener!=null){
+            //click
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = holder.getLayoutPosition();
+                    mOnItemClickListener.OnItemClick(holder.itemView,pos);
+                }
+            });
+//longclick
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int pos = holder.getLayoutPosition();
+                    mOnItemClickListener.OnItemLongClick(holder.itemView,pos);
+                    return false;
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mdate.length;
+        return mdate.size();
     }
 
     /**
@@ -63,5 +94,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
             super(itemView);
             mTextView = (TextView) itemView.findViewById(R.id.item_tv);
         }
+    }
+
+    public void addItem(String content,int positon){
+        Log.e("position",positon+"");
+        mdate.add(positon,content);
+        notifyItemInserted(positon);
+    }
+
+    public void removeItem(int positon){
+        Log.e("position",positon+"");
+        mdate.remove(positon);
+        notifyItemRemoved(positon);
     }
 }

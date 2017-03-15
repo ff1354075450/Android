@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+/**
+ * 自定义view
+ * 双缓存实现画图板
+ * Created by ff on 2016/12/22.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

@@ -43,6 +43,10 @@ public class View2 extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.WHITE);
+        /**
+         * 初始化7中路径效果
+         * 1.不使用路径效果
+         */
         effects[0]=null;
         effects[1] = new CornerPathEffect(10);
         effects[2] = new DiscretePathEffect(3.0f,5.0f);
@@ -58,7 +62,6 @@ public class View2 extends View {
             paint.setColor(colors[i]);
             canvas.drawPath(path,paint);
             canvas.translate(0,60);
-
         }
         phase +=1;
         invalidate();

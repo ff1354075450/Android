@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private void setupWindowAnimations(){
         Transition slide= TransitionInflater.from(this).inflateTransition(R.transition.activity_slide);
         getWindow().setExitTransition(slide);
-
         //返回到Acitivity的动画效果
         Slide slideTransition = new Slide();
         slideTransition.setSlideEdge(Gravity.RIGHT);

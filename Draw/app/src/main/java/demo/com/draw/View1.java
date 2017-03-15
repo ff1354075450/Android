@@ -27,10 +27,10 @@ public class View1 extends View {
         canvas.drawColor(Color.WHITE);
         //设置画笔
         Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setColor(Color.BLUE);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(4);
+        paint.setAntiAlias(true);//设置是否抗锯齿
+        paint.setColor(Color.BLUE);//设置颜色
+        paint.setStyle(Paint.Style.STROKE);//设置画笔的填充风格
+        paint.setStrokeWidth(4);//设置画笔的触笔宽度+
 
         int width = this.getWidth();
         //绘制圆形

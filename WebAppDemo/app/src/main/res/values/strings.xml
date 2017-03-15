@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">WebAppDemo</string>
+    <string name="icon1text">icon1</string>
+    <string name="icon2text">icon2</string>
+    <string name="icon3text">icon3</string>
+</resources>

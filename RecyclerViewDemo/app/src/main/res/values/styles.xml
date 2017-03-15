@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--用于设置分割线样式-->
+        <item name="android:listDivider">@drawable/divider1</item>
     </style>
 
 </resources>
